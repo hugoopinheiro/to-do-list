@@ -68,8 +68,7 @@ function deleteTask(event){
 function editTask(event){
 //função que edita o nome quando o usuario digitar enter
     function addNewTaskName(event, inputNewTaskName, tdTaskName){
-        if(event.key === 'Enter'){
-            console.log('oiii')
+        if(event.key === 'Enter' || event.keyCode == 13){
             const newTaskName = inputNewTaskName.value;
             tdTaskName.textContent = '';
             tdTaskName.textContent = newTaskName;
