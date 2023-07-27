@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script defer src="js/toDoList.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form id="addToDo">
+        <input type="text" placeholder="Adicione uma tarefa" id="taskName">
+        <input type="button" value="+" id="submit-btn" onclick="addtask()"
+        >
+    </form>
+    <table>
+        <thead>
+            
+         <tr>
+            <th>Tarefa</th>
+            <th>Data de criação</th>
+            <th>Status</th>
+            <th>Funções</th>
+        </tr>   
+        <tbody>
+            <!-- <tr>
+                <td>estudar 4 horas por dia</td>
+                <td id="dateOfCriation">24/06/23</td>
+                <td>
+                    <select>
+                        <option value="pendente">pendente</option>
+                        <option value="em andamento">em andamento</option>
+                        <option value="concluída">concluída</option>
+                    </select>
+            </td>
+                <td>
+                    <span id="deleteTask" class="material-symbols-outlined" onclick="deleteTask(event)">
+                    delete
+                    </span>
+                    <span id="editTask" class="material-symbols-outlined" onclick="editTask(event)">
+                        edit
+                    </span>
+                </td>
+            </tr>
+             -->
+        </tbody>
+        </thead>
+    </table>
+</body>
+</html>
