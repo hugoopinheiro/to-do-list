@@ -66,29 +66,36 @@ function deleteTask(event){
 }
 
 function editTask(event){
-//função que edita o nome quando o usuario digitar enter
-    function addNewTaskName(event, inputNewTaskName, tdTaskName){
-        if(event.key === 'Enter' || event.keyCode === 13 || event.which === 13){
-            const newTaskName = inputNewTaskName.value;
-            tdTaskName.textContent = '';
-            tdTaskName.textContent = newTaskName;
-        }
+    function setNewTaskName(inputNewTaskName, tdTaskName){ 
+        const newName = inputNewTaskName.value;
+        tdTaskName.textContent = newName;
     }
+    //pegando o nome atual caso o usuario decida nao alterar
+    // const currentName = tdTaskName.textContent;
+
     const taskToEdit = event.currentTarget;
     const trTaskToEdit = taskToEdit.parentNode.parentNode;
     const tdTaskName = trTaskToEdit.firstElementChild;
     tdTaskName.textContent = '';
+
     //criando input para novo nome e estilizando ele
-    inputNewTaskName = document.createElement('input');
+    const submitNewName = document.createElement('button');
+    submitNewName.textContent = '+';
+    submitNewName.style.width = '10px';
+    const inputNewTaskName = document.createElement('input');
     inputNewTaskName.type = 'text';
-    inputNewTaskName.value = tdTaskName.textContent;
-    inputNewTaskName.style.width = '95px';
+    inputNewTaskName.style.width = '75px';
     inputNewTaskName.style.outline = 'none';
+    
     //adicionando input a tabela para que o usuario altere o nome da task
     tdTaskName.textContent = '';
-    tdTaskName.appendChild(inputNewTaskName);  
-    inputNewTaskName.addEventListener('keydown', function(event){ 
-        //chamando a função que editara o nome da 
-        addNewTaskName(event, inputNewTaskName, tdTaskName)
+    tdTaskName.appendChild(inputNewTaskName);
+    tdTaskName.appendChild(submitNewName)
+    submitNewName.addEventListener('click',function(){
+        setNewTaskName(inputNewTaskName, tdTaskName);
+
+        //limpando os elementos de edição 
+        inputNewTaskName.remove();
+        submitNewName.remove() 
     })
 }
