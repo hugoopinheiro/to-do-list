@@ -68,7 +68,7 @@ function deleteTask(event){
 function editTask(event){
 //função que edita o nome quando o usuario digitar enter
     function addNewTaskName(event, inputNewTaskName, tdTaskName){
-        if(event.key === 'Enter' || event.keyCode == 13){
+        if(event.key === 'Enter' || event.keyCode === 13 || event.which === 13){
             const newTaskName = inputNewTaskName.value;
             tdTaskName.textContent = '';
             tdTaskName.textContent = newTaskName;
@@ -87,7 +87,7 @@ function editTask(event){
     //adicionando input a tabela para que o usuario altere o nome da task
     tdTaskName.textContent = '';
     tdTaskName.appendChild(inputNewTaskName);  
-    inputNewTaskName.addEventListener('keypress', function(event){ 
+    inputNewTaskName.addEventListener('keydown', function(event){ 
         //chamando a função que editara o nome da 
         addNewTaskName(event, inputNewTaskName, tdTaskName)
     })
